@@ -71,7 +71,7 @@ typedef void(^KSReachabilityCallback)(KSReachability* reachability);
 #pragma mark General Information
 
 /** The host we are monitoring reachability to, if any. */
-@property(nonatomic,readonly,retain) NSString* hostname;
+@property(nonatomic,readonly,strong) NSString* hostname;
 
 
 #pragma mark Notifications and Callbacks
@@ -91,7 +91,7 @@ typedef void(^KSReachabilityCallback)(KSReachability* reachability);
 /** The notification to send when reachability changes (nil = don't send).
  * Default = nil
  */
-@property(nonatomic,readwrite,retain) NSString* notificationName;
+@property(nonatomic,readwrite,strong) NSString* notificationName;
 
 
 #pragma mark KVO Compliant Status Properties
@@ -195,6 +195,6 @@ onReachabilityAchieved:(dispatch_block_t) onReachabilityAchieved;
      onReachabilityAchieved:(dispatch_block_t) onReachabilityAchieved;
 
 /** Access to internal reachability instance. Use this to monitor for errors. */
-@property(nonatomic,readonly,retain) KSReachability* reachability;
+@property(nonatomic,readonly,strong) KSReachability* reachability;
 
 @end

@@ -60,7 +60,7 @@
 
 @interface KSReachability ()
 
-@property(nonatomic,readwrite,retain) NSString* hostname;
+@property(nonatomic,readwrite,strong) NSString* hostname;
 @property(nonatomic,readwrite,assign) SCNetworkReachabilityFlags flags;
 @property(nonatomic,readwrite,assign) BOOL reachable;
 @property(nonatomic,readwrite,assign) BOOL WWANOnly;
@@ -368,7 +368,7 @@ static void onReachabilityChanged(__unused SCNetworkReachabilityRef target,
 
 @interface KSReachableOperation ()
 
-@property(nonatomic,readwrite,retain) KSReachability* reachability;
+@property(nonatomic,readwrite,strong) KSReachability* reachability;
 
 @end
 
